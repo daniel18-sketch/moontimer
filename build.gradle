@@ -1,0 +1,51 @@
+# MoonTimer — Fabric Mod для Minecraft 1.21
+
+Простой клиентский мод, показывающий количество дней до следующего полнолуния в левом верхнем углу экрана.
+
+## Как собрать мод
+
+### Требования
+- **Java 21** (JDK)
+- Интернет-соединение (Gradle скачает зависимости автоматически)
+
+### Сборка (Windows)
+```bat
+gradlew.bat build
+```
+
+### Сборка (Linux / macOS)
+```sh
+chmod +x gradlew
+./gradlew build
+```
+
+### Результат
+После сборки готовый `.jar` файл будет находиться в:
+```
+build/libs/moontimer-1.0.0.jar
+```
+
+## Установка
+1. Установи [Fabric Loader](https://fabricmc.net/use/) для Minecraft 1.21
+2. Установи [Fabric API](https://modrinth.com/mod/fabric-api)
+3. Скопируй `moontimer-1.0.0.jar` в папку `.minecraft/mods/`
+4. Запусти игру с профилем Fabric
+
+## Что делает мод
+- Считывает текущее игровое время
+- Вычисляет дни до следующего полнолуния (цикл = 8 дней)
+- **Полнолуние:** золотой текст `"Сегодня полнолуние!"`
+- **Обычный день:** белый текст `"До полнолуния: X дн."`
+
+## Структура проекта
+```
+moontimer/
+├── src/main/
+│   ├── java/com/example/moontimer/
+│   │   └── MoonTimer.java          ← основной класс мода
+│   └── resources/
+│       └── fabric.mod.json         ← метаданные мода
+├── build.gradle
+├── gradle.properties
+└── settings.gradle
+```
